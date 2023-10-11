@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
+
+:host {
+  font-family: Roboto;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.container {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 100px auto auto auto;
+  padding: 15px;
+  border: 1px solid #adb5bd;
+  border-radius: 10px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  &-label {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #343a40;
+  }
+
+  &-input {
+    height: 30px;
+    border: 1px solid #adb5bd;
+    padding: 5px 10px;
+    font-size: 18px;
+    border-radius: 8px;
+
+    &:focus {
+      outline: none;
+      border: 1px solid #343a40;
+    }
+  }
+}
+
+.list {
+  display: flex;
+  gap: 2px;
+}
+
+.item {
+  height: 12px;
+  width: 100%;
+  background-color: #ced4da;
+
+  &:first-child {
+    border-radius: 6px 0 0 6px;
+  }
+
+  &:last-child {
+    border-radius: 0 6px 6px 0;
+  }
+}
+
+.message {
+  font-size: 18px;
+  text-align: center;
+}
+
+.red {
+  background-color: #ff595e;
+}
+
+.yellow {
+  background-color: #ffca3a;
+}
+
+.green {
+  background-color: #8ac926;
+}
