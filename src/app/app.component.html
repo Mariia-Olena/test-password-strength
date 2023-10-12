@@ -3,32 +3,12 @@
     <label for="input" class="form-label"> Test your password strength </label>
     <input formControlName="input" id="input" type="text" class="form-input" />
   </form>
-  <ul class="list">
-    <li
-      class="item"
-      [ngClass]="{
-        red: minLength() || easy(),
-        yellow: medium() && !minLength(),
-        green: strong()
-      }"
-    ></li>
-    <li
-      class="item"
-      [ngClass]="{
-        red: minLength(),
-        yellow: medium() && !minLength(),
-        green: strong()
-      }"
-    ></li>
-    <li class="item" [ngClass]="{ red: minLength(), green: strong() }"></li>
+
+  <ul class="list" [ngClass]="checkPasswordStrength()">
+    <li *ngFor="let colorSection of [1, 2, 3]" class="colorSection"></li>
   </ul>
 
-  <p *ngIf="minLength()" class="message">
-    Password should be at least 8 characters
+  <p *ngIf="input.value" class="message">
+    {{ message }}
   </p>
-  <p *ngIf="easy() && !minLength()" class="message">Your password is easy</p>
-  <p *ngIf="medium() && !minLength()" class="message">
-    Your password is medium
-  </p>
-  <p *ngIf="strong()" class="message">Your password is strong</p>
 </div>

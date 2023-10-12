@@ -2,6 +2,8 @@
 
 :host {
   font-family: Roboto;
+  display: flex;
+  justify-content: center;
 }
 
 ul {
@@ -15,11 +17,11 @@ p {
 }
 
 .container {
-  width: 400px;
+  margin-top: 30vh;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin: 100px auto auto auto;
   padding: 15px;
   border: 1px solid #adb5bd;
   border-radius: 10px;
@@ -57,7 +59,7 @@ p {
   gap: 2px;
 }
 
-.item {
+.colorSection {
   height: 12px;
   width: 100%;
   background-color: #ced4da;
@@ -71,19 +73,41 @@ p {
   }
 }
 
+ul.invalid li {
+  background-color: #ff595e;
+}
+
+ul.easy li {
+  &:first-child {
+    background-color: #ff595e;
+  }
+}
+
+ul.medium li {
+  &:first-child {
+    background-color: #ffca3a;
+  }
+
+  &:nth-child(2) {
+    background-color: #ffca3a;
+  }
+}
+
+ul.strong li {
+  background-color: #8ac926;
+}
+
 .message {
   font-size: 18px;
   text-align: center;
 }
 
-.red {
-  background-color: #ff595e;
-}
+@media screen and (max-width: 500px) {
+  :host {
+    padding: 15px;
+  }
 
-.yellow {
-  background-color: #ffca3a;
-}
-
-.green {
-  background-color: #8ac926;
+  .container {
+    max-width: 100%;
+  }
 }
